@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    const input = prompt()
+
+    // for迴圈裡不能直接 =，要用一個空的字
+    let output = ''
+
+    for (let i = 0; i < input.length; i++) {
+      // 判斷轉大寫後是不是和原本的一樣
+      if (input[i].toUpperCase() == input[i]) {
+        output += input[i].toLowerCase()
+      } else {
+        output += input[i].toUpperCase()
+      }
+    }
+
+    document.write(output)
+  </script>
+</body>
+
+</html>

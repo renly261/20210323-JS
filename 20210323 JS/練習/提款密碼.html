@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const decrypt = (text) => {
+            // 先轉大寫或小寫避免charCode值不同
+            text = text.toUpperCase()
+            let output = ''
+            // i=0 的話前面沒東西會變負的要額外寫判斷式 
+            for (let i = 1; i < text.length; i++) {
+                // 後面字的charCode值
+                const back = text.charCodeAt(i)
+                // 前面字的charCode值
+                const front = text.charCodeAt(i - 1)
+                // 後面字的charCode值-前面字的charCode值 值轉絕對值 ，避免負數
+                output += Math.abs(back - front)
+            }
+            return output
+        }
+
+        const input = prompt('輸入文字')
+        console.log(decrypt(input))
+    </script>
+</body>
+
+</html>
